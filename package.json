@@ -1,0 +1,14 @@
+{
+  "name": "module-name",
+  "version": "0.0.1",
+  "description": "demoApp",
+  "author": "Your Name <you.name@example.org>",
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0"
+  },
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  }
+}
