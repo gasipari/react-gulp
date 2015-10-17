@@ -1,14 +1,27 @@
 {
-  "name": "module-name",
+  "name": "react-reflux",
   "version": "0.0.1",
-  "description": "demoApp",
-  "author": "Your Name <you.name@example.org>",
+  "description": "A React/Reflux app",
+  "author": "Marius Muk",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gasipari/react-reflux.git"
+  },
+  "engines": {
+    "node": ">=4.2.1"
+  },
   "devDependencies": {
+    "browserify": "^11.2.0",
     "del": "^2.0.2",
     "gulp": "^3.9.0"
   },
   "dependencies": {
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
+  },
+  "scripts": {
+    "build": "./node_modules/gulp/bin/gulp.js default",
+    "clean": "./node_modules/gulp/bin/gulp.js del"
   }
 }
