@@ -20,6 +20,9 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var del = require('del');
+var webserver = require('gulp-webserver');
+var $ = require('gulp-load-plugins')();
+var runSequence   = require('run-sequence');
 
 gulp.task('build', function () {
     return browserify({
@@ -45,6 +48,31 @@ gulp.task('html', function() {
 gulp.task('del', function() {
     del('build/*');
 });
+
+//gulp plugin to run a local webserver with LiveReload
+gulp.task('webserver', function() {
+  return gulp.src(['.tmp', 'build'])
+    .pipe($.webserver({
+      host: 'localhost',
+      port: 3000,
+      livereload: true,
+      open: true
+    }));
+});
+
+gulp.task('serve', function() {
+  runSequence('del', 'default', 'webserver');
+
+  gulp.watch('./src/*.html', ['html']);
+
+  gulp.watch('./src/js/*.jsx', ['build'])
+    .on('change', function (event) {
+      if (event.type === 'deleted') {
+        //delete $.cached.caches['compass'][event.path];
+      }
+    });
+});
+
 
 gulp.task('default', ['build', 'html']);
 

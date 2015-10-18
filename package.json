@@ -12,16 +12,23 @@
     "node": ">=4.2.1"
   },
   "devDependencies": {
+    "babelify": "^6.3.0",
     "browserify": "^11.2.0",
     "del": "^2.0.2",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-webserver": "^0.9.1",
+    "run-sequence":"^1.1.4",
+    "vinyl-source-stream":"1.1.0"
   },
   "dependencies": {
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-router":"^1.0.0-rc3"
   },
   "scripts": {
     "build": "./node_modules/gulp/bin/gulp.js default",
-    "clean": "./node_modules/gulp/bin/gulp.js del"
+    "clean": "./node_modules/gulp/bin/gulp.js del",
+    "start": "./node_modules/gulp/bin/gulp.js serve"
   }
 }
